@@ -46,4 +46,9 @@ public class HouseController {
 		System.out.println(houseInfo.getName());
 		return 1001L;
 	}
+	
+	@GetMapping("/{houseId}")
+	public HouseInfo houseInfo(@PathVariable("houseId") Long houseId) {
+		return new HouseInfo(houseId, "上海", "虹口", "东体小区");
+	}
 }

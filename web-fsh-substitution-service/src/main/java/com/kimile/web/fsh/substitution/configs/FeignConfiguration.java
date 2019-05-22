@@ -3,12 +3,14 @@ package com.kimile.web.fsh.substitution.configs;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.kimile.web.fsh.substitution.configs.jackson.JacksonDecoder;
 import com.kimile.web.fsh.substitution.configs.jackson.JacksonEncoder;
 import com.kimile.web.fsh.substitution.interceptor.FeignBasicAuthRequestInterceptor;
 
 import feign.Contract;
+import feign.Feign;
 import feign.Logger;
 import feign.Request;
 import feign.auth.BasicAuthRequestInterceptor;
@@ -71,5 +73,14 @@ public class FeignConfiguration {
 //	@Bean
 	public Encoder encoder() {
 		return new JacksonEncoder();
+	}
+	
+	/*
+	 * 通过代码的方式让Feign禁用Hystrix组件
+	 */
+//	@Bean
+	@Scope("prototype")
+	public Feign.Builder feignBuilder() {
+		return Feign.builder();
 	}
 }

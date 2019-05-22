@@ -2,8 +2,10 @@ package com.kimile.web.fsh.substitution.client;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.kimile.web.fsh.substitution.configs.FeignConfiguration;
+import com.kimile.web.fsh.substitution.ov.HouseInfo;
 
 /*
  * 定义Feign客户端接口
@@ -11,7 +13,7 @@ import com.kimile.web.fsh.substitution.configs.FeignConfiguration;
  * value属性是对应的服务的名称
  * path属性是接口中URI统一的前缀
  */
-@FeignClient(value = "fsh-house", path = "/house/house", configuration = FeignConfiguration.class)
+@FeignClient(value = "fsh-house", path = "/house/house", configuration = FeignConfiguration.class, fallback = HouseRemoteClientHystrix.class, fallbackFactory = HouseRemoteClientFallbackFactory.class)
 public interface HouseRemoteClient {
 	
 	/*
@@ -20,5 +22,8 @@ public interface HouseRemoteClient {
 	 */
 	@GetMapping("/hello")
 	String hello();
+	
+	@GetMapping("/{houseId}")
+	HouseInfo houseInfo(@PathVariable("houseId") Long houseId);
 	
 }

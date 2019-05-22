@@ -44,6 +44,17 @@
 			<groupId>org.springframework.retry</groupId>
 			<artifactId>spring-retry</artifactId>
 		</dependency>
+		<!-- 服务容错处理Hystrix依赖，实现了容错外，还提供了实时监控功能，即存在Actuator监控时，可查看服务调用信息，更多指标信息可查看https://github.com/Netflix/Hystrix/wiki/Metrics-and-Monitoring -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<!-- 监控Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
