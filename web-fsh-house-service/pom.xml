@@ -25,6 +25,19 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
+		<!-- Sleuth服务跟踪依赖 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<!-- 输出Json格式的日志 -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>4.8</version>
+			<scope>runtime</scope>
+		</dependency>
+		
 		<!-- springboot热部署配置 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

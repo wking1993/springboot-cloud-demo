@@ -49,6 +49,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
+		<!-- Sleuth服务跟踪依赖 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		
+		
 		<!-- 监控Actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

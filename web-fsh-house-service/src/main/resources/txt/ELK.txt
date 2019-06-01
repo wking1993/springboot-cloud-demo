@@ -1,0 +1,8 @@
+1.ELK日志分析系统：可以将多台服务器上的日志信息统一收集起来，在出问题的时候可以轻松根据traceId来搜索出对应的请求链路信息；
+  ELK由三个组件组成：
+  1）ElasticSearch：一个开源分布式搜索引擎，特点是分布式、零配置、自动发现、索引自动分片、索引副本机制、restful风格接口、多数据源、自动搜索负载等；
+  2）Logstash：一个完全开源的工具，可以对日志进行收集、分析、并存储以提供以后使用；
+  3）kibaba：一个开源和免费的工具，可以为Logstash和ElasticSearch提供日志分析友好的Web页面，可以汇总、分析和搜索重要的数据日志。
+  *ELK官网：https://www.elastic.co/cn/
+2.在项目中可以通过logback来输出Json格式的日志，让Logstash收集存储到ElasticSearch中，然后在kibana中查看。
+  需引入指定jar包，并在logback.xml文件中配置logstash需要收集的数据格式；

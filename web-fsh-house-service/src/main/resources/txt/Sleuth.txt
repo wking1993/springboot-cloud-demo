@@ -1,0 +1,7 @@
+1.在SpringCloud中集成了Sleuth之后，可以实现对请求服务调用的链路跟踪，此事，在日志中会自动增加一部分内容，是Sleuth为服务直接提供的链路信息：
+  可以看到内容是由[appname,traceId,spanId,exportable]组成的，具体含义如下：
+  1）appname：服务的名称，也就是spring.application.name的值；
+  	这里需要注意，如果需要输出正确的服务名称，就要把spring.application.name的配置写在bootstrap.properties中；
+  2）traceId：整个请求的唯一ID，它标识整个请求的链路；
+  3）spanId：基本的工作单元，发起一次远程调用就是一个span；
+  4）exportable：决定是否导入数据到Zipkin中。
