@@ -50,11 +50,16 @@
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
 		<!-- Sleuth服务跟踪依赖 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
+		</dependency> -->
 		
+		<!-- Zipkin日志收集 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
 		
 		<!-- 监控Actuator -->
 		<dependency>

@@ -9,41 +9,20 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kimile</groupId>
-	<artifactId>web-fsh-house-service</artifactId>
+	<artifactId>web-zipkin-demo</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>web-fsh-house-service</name>
-	<description>the first component for Spring Cloud Eureka</description>
+	<name>web-zipkin-demo</name>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-		<!-- eureka -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- Sleuth服务跟踪依赖 -->
-		<!-- <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency> -->
-		<!-- 输出Json格式的日志 -->
-		<dependency>
-			<groupId>net.logstash.logback</groupId>
-			<artifactId>logstash-logback-encoder</artifactId>
-			<version>4.8</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-		<!-- Zipkin日志收集 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
-		</dependency>
-		
 		<!-- springboot热部署配置 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,8 +38,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- 整合Zipkin -->
+		<dependency>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-autoconfigure-ui</artifactId>
+		</dependency>
 	</dependencies>
-
+	
 	<!-- Spring Cloud -->
 	<dependencyManagement>
 		<dependencies>
@@ -73,7 +61,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
