@@ -50,6 +50,9 @@ public class FeignConfiguration {
 	}
 	
 	//使用自定义的认证配置
+	/*
+	 * 创建Feign请求拦截器，在发送请求之前设置认证的Token，各个微服务将Token设置到环境变量中来达到通用的目的
+	 */
 	@Bean
 	public FeignBasicAuthRequestInterceptor feignBasicAuthRequestInterceptor() {
 		return new FeignBasicAuthRequestInterceptor();

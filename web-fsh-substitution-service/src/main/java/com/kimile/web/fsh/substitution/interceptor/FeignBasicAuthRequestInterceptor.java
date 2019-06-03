@@ -5,9 +5,12 @@ import feign.RequestTemplate;
 
 public class FeignBasicAuthRequestInterceptor implements RequestInterceptor {
 
+	public FeignBasicAuthRequestInterceptor() {
+	}
+	
 	@Override
 	public void apply(RequestTemplate template) {
-		System.out.println(template.url());
+		template.header("Authorization", System.getProperty("web.auth.token"));
 	}
 
 }

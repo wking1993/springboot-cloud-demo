@@ -9,11 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kimile</groupId>
-	<artifactId>web-fsh-house-service</artifactId>
+	<artifactId>web-auth-service</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>web-fsh-house-service</name>
-	<description>the first component for Spring Cloud Eureka</description>
+	<name>web-auth-service</name>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -25,56 +24,31 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-		<!-- Sleuth服务跟踪依赖 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
-		<!-- 输出Json格式的日志 -->
-		<dependency>
-			<groupId>net.logstash.logback</groupId>
-			<artifactId>logstash-logback-encoder</artifactId>
-			<version>4.8</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-		<!-- Zipkin日志收集，使用http方式发送数据时配置 -->
-		<!-- <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
-		</dependency> -->
-		
-		<!-- Zipkin日志收集，采用RabbitMQ方式发送数据时配置 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
-		</dependency>
-		
 		<!-- springboot热部署配置 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-		<!-- springboot中actuator监控配置 -->
+		
+		<!-- 监控Actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- JWT -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.7.0</version>
 		</dependency>
+		
 	</dependencies>
 
 	<!-- Spring Cloud -->
