@@ -75,6 +75,13 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.7.0</version>
 		</dependency>
+		
+		<!-- 将Actuator信息整合展示到Spring Boot Admin -->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>1.5.5</version>
+		</dependency>
 	</dependencies>
 
 	<!-- Spring Cloud -->
