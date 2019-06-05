@@ -1,0 +1,1 @@
+1.Spring Boot Admin是一个基于Spring Boot Actuator的数据展示框架，能够通过Web页面的方式对Actuator中的信息进行展示，同时还可以集成别的页面组件。
