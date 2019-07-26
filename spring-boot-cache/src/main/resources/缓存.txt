@@ -1,0 +1,26 @@
+1、Guava Cache本地缓存：
+  1.1 优点：
+    a)本地缓存，读取效率高，不受网络因素影像
+    b)拥有丰富的功能，操作简单
+    c)线程安全
+  1.2 缺点：
+    a)缓存为本地缓存，不能持久化数据
+    b)单机缓存，受机器内存限制，应用重启数据会丢失
+    c)分布式部署时无法保证数据的一致性
+  1.3 基于时间的两种回收方式：
+    a)expireAfterAccess(long, TimeUnit):当缓存项在制定的时间段内，没有被读或写就会被回收，这种回收策略类似于基于容量回收策略；
+    b)expireAfterWrite(long, TimeUnit):当缓存项在指定的时间段内没有更新就会被回收，如果我们认为缓存数据在一段时间后，不再可用，那么可以使用该策略。
+  1.4 显示移除的三种方式：
+    a)CacheBuilder.invalidate(key):单个移除
+    b)CacheBuilder.invalidateAll(keys):批量移除
+    c)CacheBuilder.invalidateAll():移除全部
+  1.5 通过设置最大容量来进行移除的方式，当超出制定的容量后缓存将尝试回收最近没有使用或者总体上很少使用的缓存项：
+    CacheBuilder.newBuilder().maximumSize(10)
+2、Redis缓存
+  2.1 Redis是一个开源的使用C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。
+      Redis是一个高性能的key-value数据库，同时支持多种存储类型，包括String(字符串)、List(链表)、Set(集合)、Zset(有序集合)、Hash(哈希)
+  2.2 Spring Cache缓存数据的注解：
+    a) @Cacheable:用于查询的时候缓存数据；
+    b) @CachePut:用于对数据修改的时候，修改缓存中的数据；
+    c) @CacheEvict:用于对数据删除的时候清除缓存中的数据；
+    
